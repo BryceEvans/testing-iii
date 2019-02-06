@@ -5,10 +5,18 @@ import 'jest-dom/extend-expect';
 
 import Dashboard from './Dashboard';
 import Controls from '../controls/Controls';
+import Display from '../display/Display';
 
-describe('Dahsboard Component', () => {
+// shows the controls and display
+describe('Shows Components', () => {
   it('displays dashboard component', () => {
     render(<Dashboard />);
+  })
+  it('displays controls component', () => {
+    render(<Controls />);
+  })
+  it('displays display component', () => {
+    render(<Display />);
   })
 })
 
