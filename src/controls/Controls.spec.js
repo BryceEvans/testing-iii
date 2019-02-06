@@ -23,15 +23,15 @@ describe('Controls Component', () => {
 });
 
 // buttons' text changes to reflect the state the door will be in if clicked
-describe('button changes to reflect state door in when clicked', () => {
-  it('buttons display state of door', () => {
-    const { getByText, getByTestId } = render(<Controls />);
-    const button = getByTestId("close-button");
+describe('button changes from close gate to open gate when clicked', () => {
+  it('open/close button text changes when clicked once', () => {
+    const { getByText } = render(<Controls locked={true} closed={true} />);
+    const button = getByText(/close gate/i);
 
     fireEvent.click(button);
-    // fireEvent.click(button); it works with this twice, which also doesn't make any sense...
-
-    // I don't know why this works with close gate. In use, you click on it once and it says open gate.
+    
     getByText(/close gate/i);
   })
 })
+
+// the closed toggle button is disabled if the gate is closed
